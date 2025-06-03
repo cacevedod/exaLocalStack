@@ -1,0 +1,12 @@
+services:
+  localstack:
+    container_name: localstack_main
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4510-4559:4510-4559"
+      - "127.0.0.1:4566:4566"
+    environment:
+      - SERVICES=sqs,events
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - ACTIVATE_PRO=0
